@@ -135,7 +135,7 @@ export interface SimulationResult {
   /** Name of the contract method being simulated */
   functionName: string;
   /** Decoded return value from the simulation, or undefined if none */
-  expectedResult: any;
+  expectedResult: unknown;
   /** Number of ledger entries accessed (read-only + read-write) */
   footprintSize: number;
 }
