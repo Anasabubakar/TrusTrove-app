@@ -1,4 +1,7 @@
-import { SkeletonShimmer, InvoiceTableSkeleton } from "@/components/shared/SkeletonLoader";
+import {
+  SkeletonShimmer,
+  InvoiceTableSkeleton,
+} from "@/components/shared/SkeletonLoader";
 
 export default function MarketplaceLoading() {
   return (
