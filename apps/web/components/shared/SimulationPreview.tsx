@@ -1,12 +1,6 @@
 import React from "react";
 import { Cpu, Coins, ShieldAlert, Sparkles } from "lucide-react";
-
-interface SimulationDetails {
-  estimatedFeeXlm: string;
-  functionName: string;
-  expectedResult: any;
-  footprintSize: number;
-}
+import type { SimulationResult } from "@trusttrove/sdk";
 
 interface SimulationPreviewProps {
   details: SimulationResult | null;

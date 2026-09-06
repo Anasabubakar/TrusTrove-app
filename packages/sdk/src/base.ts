@@ -10,13 +10,6 @@ import {
 import * as freighterApi from "@stellar/freighter-api";
 import { getConfig, getSorobanServer } from "./config.js";
 
-export interface SimulationResult {
-  estimatedFeeXlm: string;
-  functionName: string;
-  expectedResult: unknown;
-  footprintSize: number;
-}
-
 const signTransactionFn =
   (
     freighterApi as unknown as {
