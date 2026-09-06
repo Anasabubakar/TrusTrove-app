@@ -1,4 +1,8 @@
-import { SkeletonShimmer, PoolStatsPanelSkeleton, LPPositionCardSkeleton } from "@/components/shared/SkeletonLoader";
+import {
+  SkeletonShimmer,
+  PoolStatsPanelSkeleton,
+  LPPositionCardSkeleton,
+} from "@/components/shared/SkeletonLoader";
 
 export default function LPLoading() {
   return (

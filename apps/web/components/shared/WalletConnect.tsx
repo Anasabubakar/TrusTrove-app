@@ -35,6 +35,7 @@ export function WalletConnect() {
   const network = useWalletStore((s) => s.network);
   const [installed, setInstalled] = useState<boolean | null>(null);
   const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState<string | null>(null);
   const [switchingNetwork, setSwitchingNetwork] = useState(false);
   const [networkSwitchError, setNetworkSwitchError] = useState<string | null>(
     null,
@@ -46,9 +47,16 @@ export function WalletConnect() {
 
   const handleCopy = async () => {
     if (!address) return;
-    await navigator.clipboard.writeText(address);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+
+    try {
+      setCopyError(null);
+      await navigator.clipboard.writeText(address);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+      setCopyError("Couldn't copy wallet address. Please try again.");
+    }
   };
 
   const handleSwitchToTestnet = async () => {
@@ -207,6 +215,16 @@ export function WalletConnect() {
           <span className="truncate max-w-xs">
             You cancelled the connection request
           </span>
+        </div>
+      )}
+
+      {copyError && (
+        <div
+          role="alert"
+          className="flex items-center gap-1.5 text-xs text-rose-400 bg-rose-500/10 border border-rose-500/20 rounded-md px-2.5 py-1"
+        >
+          <AlertCircle className="h-3.5 w-3.5 shrink-0" />
+          <span>{copyError}</span>
         </div>
       )}
 
