@@ -148,6 +148,25 @@ Open [http://localhost:3000](http://localhost:3000), connect Freighter on testne
 
 ---
 
+## Build & Test
+
+Run these from the repository root after `pnpm install`. CI runs the same commands on every push and pull request against `main` (see [`.github/workflows/ci.yml`](./.github/workflows/ci.yml)).
+
+```bash
+# Build the SDK and the web app
+pnpm build
+
+# Run the SDK and web app unit test suites
+pnpm test
+
+# Run the Go indexer's test suite
+cd indexer && go test ./...
+```
+
+Building the web app reads `NEXT_PUBLIC_*` variables from `.env.local` (see step 2 above) — without it, `pnpm build` still succeeds but the app logs `Missing required environment variables` warnings.
+
+---
+
 ## Contributing
 
 We welcome contributions from the Stellar community. Before opening a PR, please read [CONTRIBUTING.md](./CONTRIBUTING.md).

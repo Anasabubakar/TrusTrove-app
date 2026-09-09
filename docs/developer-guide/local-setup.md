@@ -63,6 +63,14 @@ pnpm --filter web dev
 
 Open [http://localhost:3000](http://localhost:3000), connect Freighter on testnet, and get testnet USDC from [demo.stellar.org](https://demo.stellar.org).
 
+### 7. Build and test
+
+```bash
+pnpm build             # SDK + web app
+pnpm test               # SDK + web app unit tests
+cd indexer && go test ./...   # Go indexer unit tests
+```
+
 ## Database migrations
 
 Indexer migrations are stored in `indexer/db/migrations` and use a forward-only migration system. Migration files are named using the `NNN_name.sql` convention (e.g., `001_initial.sql`, `002_add_indexes.sql`).
