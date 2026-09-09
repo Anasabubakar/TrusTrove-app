@@ -34,9 +34,7 @@ describe("RegistrationModal", () => {
     );
 
     expect(screen.getByRole("dialog")).toBeInTheDocument();
-    expect(
-      screen.getByText(/register business metadata/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/register business metadata/i)).toBeInTheDocument();
     expect(
       screen.getByRole("button", { name: /register profile/i }),
     ).toBeInTheDocument();
@@ -137,7 +135,9 @@ describe("RegistrationModal", () => {
       />,
     );
 
-    const buyerButton = screen.getByRole("button", { name: /obligor \/ buyer/i });
+    const buyerButton = screen.getByRole("button", {
+      name: /obligor \/ buyer/i,
+    });
     const issuerButton = screen.getByRole("button", { name: /sme \/ issuer/i });
 
     expect(issuerButton.className).toContain("border-primary");
