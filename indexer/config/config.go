@@ -35,6 +35,7 @@ type Config struct {
 	RateLimitRPS          int
 	ServerSeed            string
 	ServerSeedGenerated   bool
+	SentryDSN             string
 }
 
 func LoadConfig() (*Config, error) {
@@ -162,6 +163,7 @@ func LoadConfig() (*Config, error) {
 		RateLimitRPS:          rateLimitRPS,
 		ServerSeed:            serverSeed,
 		ServerSeedGenerated:   serverSeedGenerated,
+		SentryDSN:             strings.TrimSpace(os.Getenv("SENTRY_DSN")),
 	}
 
 	if len(missing) > 0 {
