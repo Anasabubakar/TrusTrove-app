@@ -6,7 +6,7 @@ Follow these steps to set up the TrusTrove repository locally.
 
 - Node.js 20+
 - pnpm 9+
-- Go 1.22+
+- Go 1.25+
 - Docker
 - Freighter browser extension installed
 

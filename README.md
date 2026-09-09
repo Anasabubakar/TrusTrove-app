@@ -72,7 +72,7 @@ Yield distributes to LP shares
 | Wallet          | Freighter browser extension                                                               |
 | Payments        | USDC on Stellar                                                                           |
 | SDK             | Custom TypeScript contract client wrappers                                                |
-| Indexer         | Go 1.22, chi router, pgx v5                                                               |
+| Indexer         | Go 1.25, chi router, pgx v5                                                               |
 | Database        | PostgreSQL 15                                                                             |
 | Hosting         | Vercel (frontend), Render (indexer + database)                                            |
 
@@ -105,7 +105,7 @@ Yield distributes to LP shares
 
 - Node.js 20+
 - pnpm 9+
-- Go 1.22+
+- Go 1.25+
 - Docker
 - [Freighter](https://freighter.app) browser extension
 
